@@ -6,6 +6,7 @@
                    xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
                    GlowBrush="{DynamicResource AccentColorBrush}"
                     BorderThickness="1"
+                   WindowState="Maximized"
                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                    xmlns:local="clr-namespace:POS_Application"
@@ -19,13 +20,68 @@
                    mc:Ignorable="d"
                    Title="MainWindow" Height="720" Width="1280">
     <Grid>
-        <metro:Tile x:Name="tile_pegawai"
-                    Title="Data Pegawai">
-                    <metro:Tile.Effect>
-                        <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
-                    </metro:Tile.Effect>
-            <iconPacks:PackIconEntypo
-				Kind="Users" Width="84" Height="84"/>
-        </metro:Tile>
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:1.2}">
+            <StackPanel x:Name="header">
+                <materialDesign:ColorZone
+					materialDesign:ShadowAssist.ShadowDepth="Depth3"
+					Mode="PrimaryMid">
+                    <DockPanel>
+
+                        <metro:Tile Width="45" 
+                                    Height="32"
+                                    x:Name="btn_slideback"
+                                    ToolTip="Kembali"
+                                    Visibility="Hidden"
+                                    Margin="4,4,3,4" Cursor="Hand" >
+                            <materialDesign:PackIcon
+                                Kind="ArrowLeft"
+                                Height="24"
+                                Width="24" VerticalAlignment="Center">
+                            </materialDesign:PackIcon>
+                            <metro:Tile.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <Trigger Property="metro:Tile.IsMouseOver" Value="True">
+                                            <Setter Property="metro:Tile.Background" Value="{DynamicResource AccentColorBrush3}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </metro:Tile.Style>
+
+                        </metro:Tile>
+
+                        <iconPacks:PackIconMaterial x:Name="icon_title"
+							                        Kind="ViewDashboard" Width="24" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                        <TextBlock x:Name="txt_title" Margin="0" Style="{StaticResource MaterialDesignTitleTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center">Dasboard</TextBlock>
+
+                        <DockPanel DockPanel.Dock="Right" HorizontalAlignment="Right">
+                            <metro:Tile Width="45" 
+                                        Height="32"
+                                        x:Name="btn_slidedown"
+                                        Visibility="Hidden"
+                                        Margin="4" Cursor="Hand">
+                                <materialDesign:PackIcon
+                                                Kind="ChevronDown"
+                                                Height="24"
+                                                Width="24" VerticalAlignment="Center">
+                                </materialDesign:PackIcon>
+                                <metro:Tile.Style>
+                                    <Style>
+                                        <Style.Triggers>
+                                            <Trigger Property="metro:Tile.IsMouseOver" Value="True">
+                                                <Setter Property="metro:Tile.Background" Value="{DynamicResource AccentColorBrush3}"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </metro:Tile.Style>
+
+                            </metro:Tile>
+                        </DockPanel>
+                    </DockPanel>
+
+                </materialDesign:ColorZone>
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+        
     </Grid>
 </metro:MetroWindow>
