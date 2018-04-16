@@ -114,7 +114,7 @@
 
                 <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect ExpandIn,Duration=0:0:0.5}">
                     <metro:Tile x:Name="tile_datatoko"
-                                Title="Data Toko">
+                                Title="Data Toko" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -126,15 +126,13 @@
                     <materialDesign:TransitioningContent.OpeningEffects>
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <DockPanel materialDesign:ShadowAssist.ShadowDepth="Depth3" VerticalAlignment="Stretch">
-                        <metro:Tile x:Name="tile_datapegawai"
-                                    Title="Data Pegawai" Click="tile_siswa_Click">
-                            <metro:Tile.Effect>
-                                <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
-                            </metro:Tile.Effect>
-                            <iconPacks:PackIconEntypo Kind="Users" Width="84" Height="84"/>
-                        </metro:Tile>
-                    </DockPanel>
+                    <metro:Tile x:Name="tile_datakaryawan"
+                                    Title="Data Karyawan" Click="tile_siswa_Click" MinHeight="220" Height="Auto">
+                        <metro:Tile.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                        </metro:Tile.Effect>
+                        <iconPacks:PackIconEntypo Kind="Users" Width="84" Height="84"/>
+                    </metro:Tile>
                 </materialDesign:TransitioningContent>
 
                 <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}">
@@ -142,7 +140,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_databarang"
-                                Title="Data Barang">
+                                Title="Data Barang" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -155,7 +153,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_transaksi"
-                                Title="Transaksi">
+                                Title="Transaksi" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -168,7 +166,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_sekolah"
-                                Title="Laporan">
+                                Title="Laporan" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -181,7 +179,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_inputnl"
-                                Title="Input Nilai">
+                                Title="Input Nilai" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -194,7 +192,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_laporan"
-                                Title="Cetak">
+                                Title="Cetak" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -207,7 +205,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_rekap"
-                                Title="Rekap Nilai">
+                                Title="Rekap Nilai" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
