@@ -20,6 +20,8 @@
                    mc:Ignorable="d"
                    Title="MainWindow" Height="720" Width="1280">
     <Grid>
+        
+        <!--ini buat Header Collapse-->
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:1.2}">
             <StackPanel x:Name="header">
                 <materialDesign:ColorZone
