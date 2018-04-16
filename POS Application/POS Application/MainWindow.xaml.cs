@@ -25,5 +25,10 @@ namespace POS_Application
         {
             InitializeComponent();
         }
+
+        private void tile_siswa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
