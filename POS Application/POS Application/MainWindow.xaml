@@ -114,7 +114,7 @@
 
                 <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect ExpandIn,Duration=0:0:0.5}">
                     <metro:Tile x:Name="tile_datatoko"
-                                Title="Data Toko">
+                                Title="Data Toko" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -142,7 +142,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_databarang"
-                                Title="Data Barang">
+                                Title="Data Barang" MinHeight="220" Height="Auto">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -194,7 +194,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_cetak"
-                                Title="Segera hadir">
+                                Title="Cetak">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
@@ -207,7 +207,7 @@
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
                     <metro:Tile x:Name="tile_rekap"
-                                Title="Segera hadir juga">
+                                Title="Rekap Nilai">
                         <metro:Tile.Effect>
                             <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
                         </metro:Tile.Effect>
