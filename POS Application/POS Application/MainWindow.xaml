@@ -19,10 +19,12 @@
                     FontFamily="{DynamicResource MaterialDesignFont}"
                    mc:Ignorable="d"
                    Title="MainWindow" Height="720" Width="1280">
-    <Grid>
+    <DockPanel>
         
+
+
         <!--ini buat Header Collapse-->
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:1.2}">
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:1.2}" DockPanel.Dock="Top">
             <StackPanel x:Name="header">
                 <materialDesign:ColorZone
 					materialDesign:ShadowAssist.ShadowDepth="Depth3"
@@ -85,5 +87,135 @@
             </StackPanel>
         </materialDesign:TransitioningContent>
         
-    </Grid>
+        <!--============================-->
+        
+        
+        <!--Tile menu nya-->
+        <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center">
+
+            <ItemsControl x:Name="itemsControl" Margin="160,0">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="4" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.Resources>
+                    <Style BasedOn="{StaticResource {x:Type metro:Tile}}" TargetType="{x:Type metro:Tile}">
+                        <Setter Property="Width" Value="Auto" />
+                        <Setter Property="Height" Value="220" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{DynamicResource AccentColorBrush2}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ItemsControl.Resources>
+
+                <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect ExpandIn,Duration=0:0:0.5}">
+                    <metro:Tile x:Name="tile_pegawai"
+                                Title="Data Pegawai">
+                        <metro:Tile.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                        </metro:Tile.Effect>
+                        <iconPacks:PackIconEntypo Kind="Users" Width="84" Height="84"/>
+                    </metro:Tile>
+                </materialDesign:TransitioningContent>
+
+                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}" Margin="0">
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="ExpandIn" />
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    <DockPanel materialDesign:ShadowAssist.ShadowDepth="Depth3" VerticalAlignment="Stretch">
+                        <metro:Tile x:Name="tile_siswa"
+                                    Title="Data Siswa">
+                            <metro:Tile.Effect>
+                                <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                            </metro:Tile.Effect>
+                            <iconPacks:FontAwesome Kind="UsersSolid" Width="84" Height="84"/>
+                        </metro:Tile>
+                    </DockPanel>
+                </materialDesign:TransitioningContent>
+
+                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}">
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="ExpandIn" />
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    <metro:Tile x:Name="tile_mapel"
+                                Title="Data Mata Pelajaran">
+                        <metro:Tile.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                        </metro:Tile.Effect>
+                        <iconPacks:Modern Kind="Book" Width="84" Height="84"/>
+                    </metro:Tile>
+                </materialDesign:TransitioningContent>
+
+                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}">
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="ExpandIn" />
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    <metro:Tile x:Name="tile_kelas"
+                                Title="Data Kelas">
+                        <metro:Tile.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                        </metro:Tile.Effect>
+                        <iconPacks:Material Kind="ChairSchool" Width="84" Height="84"/>
+                    </metro:Tile>
+                </materialDesign:TransitioningContent>
+
+                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}">
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="ExpandIn" />
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    <metro:Tile x:Name="tile_sekolah"
+                                Title="Data Sekolah">
+                        <metro:Tile.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                        </metro:Tile.Effect>
+                        <iconPacks:Material Kind="School" Width="84" Height="84"/>
+                    </metro:Tile>
+                </materialDesign:TransitioningContent>
+
+                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}">
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="ExpandIn" />
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    <metro:Tile x:Name="tile_inputnl"
+                                Title="Input Nilai">
+                        <metro:Tile.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                        </metro:Tile.Effect>
+                        <iconPacks:Modern Kind="CabinetFiles" Width="84" Height="84"/>
+                    </metro:Tile>
+                </materialDesign:TransitioningContent>
+
+                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}">
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="ExpandIn" />
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    <metro:Tile x:Name="tile_laporan"
+                                Title="Cetak">
+                        <metro:Tile.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                        </metro:Tile.Effect>
+                        <iconPacks:Material Kind="FileDocument" Width="84" Height="84"/>
+                    </metro:Tile>
+                </materialDesign:TransitioningContent>
+
+                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}">
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="ExpandIn" />
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    <metro:Tile x:Name="tile_rekap"
+                                Title="Rekap Nilai">
+                        <metro:Tile.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="15" Opacity="0.9" Color="#FF424242" Direction="290"/>
+                        </metro:Tile.Effect>
+                        <iconPacks:Material Kind="TooltipEdit" Width="84" Height="84"/>
+                    </metro:Tile>
+                </materialDesign:TransitioningContent>
+            </ItemsControl>
+
+        </StackPanel>
+    </DockPanel>
 </metro:MetroWindow>

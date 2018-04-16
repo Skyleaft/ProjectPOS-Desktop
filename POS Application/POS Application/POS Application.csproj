@@ -118,6 +118,7 @@
     <Compile Include="FormTransaksi.xaml.cs">
       <DependentUpon>FormTransaksi.xaml</DependentUpon>
     </Compile>
+    <Compile Include="koneksi.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
