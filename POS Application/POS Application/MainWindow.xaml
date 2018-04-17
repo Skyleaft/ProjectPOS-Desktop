@@ -19,12 +19,15 @@
                     FontFamily="{DynamicResource MaterialDesignFont}"
                    mc:Ignorable="d"
                    Title="Point Of Sale" Height="720" Width="1280">
-    <DockPanel>
-        
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
 
 
         <!--ini buat Header Collapse-->
-        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:1.2}" DockPanel.Dock="Top">
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromTop, Duration=0:0:1.2}" Grid.RowSpan="2">
             <StackPanel x:Name="header">
                 <materialDesign:ColorZone
 					materialDesign:ShadowAssist.ShadowDepth="Depth3"
@@ -86,12 +89,12 @@
                 </materialDesign:ColorZone>
             </StackPanel>
         </materialDesign:TransitioningContent>
-        
+
         <!--============================-->
-        
-        
+
+
         <!--Tile menu nya-->
-        <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center">
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
 
             <ItemsControl x:Name="itemsControl" Margin="160,0">
                 <ItemsControl.ItemsPanel>
@@ -122,7 +125,7 @@
                     </metro:Tile>
                 </materialDesign:TransitioningContent>
 
-                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}" Margin="0">
+                <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.05}">
                     <materialDesign:TransitioningContent.OpeningEffects>
                         <materialDesign:TransitionEffect Kind="ExpandIn" />
                     </materialDesign:TransitioningContent.OpeningEffects>
@@ -217,5 +220,5 @@
             </ItemsControl>
 
         </StackPanel>
-    </DockPanel>
+    </Grid>
 </metro:MetroWindow>
