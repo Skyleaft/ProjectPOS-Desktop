@@ -15,8 +15,9 @@ namespace POS_Application
         public SqlDataAdapter da;
         public DataTable dt;
         public DataSet ds;
-        public String ip = "169.254.73.162";
-        public String db = @"server=MSI-WORKSTATION\SQLEXPRESS;database=db_pointofsale;trusted_connection=true";
+        public String db = @"Data Source=192.168.1.117,1433;
+                            Network Library=DBMSSOCN;Initial Catalog=db_pointofsale;
+                            User ID=milzan;Password=12345678";
         public String sql;
 
         public void setdt()
