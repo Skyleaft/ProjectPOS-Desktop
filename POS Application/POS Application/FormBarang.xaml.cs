@@ -29,7 +29,6 @@ namespace POS_Application
         }
 
         koneksi k = new koneksi();
-        private String alamat_foto;
 
         public void showdata()
         {

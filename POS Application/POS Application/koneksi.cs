@@ -15,9 +15,9 @@ namespace POS_Application
         public SqlDataAdapter da;
         public DataTable dt;
         public DataSet ds;
-        public String db = @"Data Source=192.168.1.117,1433;
+        public String db = @"Data Source=192.168.1.118,1433;
                             Network Library=DBMSSOCN;Initial Catalog=db_pointofsale;
-                            User ID=milzan;Password=12345678";
+                            User ID=subhan;Password=12345678";
         public String sql;
 
         public void setdt()
