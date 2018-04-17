@@ -24,7 +24,7 @@
             <StackPanel Margin="30,50,10,0">
                 <StackPanel  Orientation="Horizontal" Margin="0,0,0,10">
                     <materialDesign:PackIcon Margin="0,0,8,0"
-		                                     Foreground="{Binding ElementName=txt_kdkar, Path=BorderBrush}"
+		                                     Foreground="{Binding ElementName=txt_kdbarang, Path=BorderBrush}"
                                              Width="36" Height="36"
 		                                     Kind="Key" VerticalAlignment="Center" />
                     <TextBox x:Name="txt_kdbarang"
@@ -32,9 +32,10 @@
 		                 Width="200"
 		                 materialDesign:TransitionAssist.DisableTransitions="True" FontSize="16" />
                 </StackPanel>
+                
                 <StackPanel  Orientation="Horizontal" Margin="0,0,0,10">
                     <materialDesign:PackIcon Margin="0,0,8,0"
-		                                     Foreground="{Binding ElementName=txt_kdkar, Path=BorderBrush}"
+		                                     Foreground="{Binding ElementName=txt_namabarang, Path=BorderBrush}"
                                              Width="36" Height="36"
 		                                     Kind="Dropbox" VerticalAlignment="Center" />
                     <TextBox x:Name="txt_namabarang"
@@ -42,9 +43,42 @@
 		                 Width="300"
 		                 materialDesign:TransitionAssist.DisableTransitions="True" FontSize="16" />
                 </StackPanel>
+
                 <StackPanel  Orientation="Horizontal" Margin="0,0,0,10">
                     <materialDesign:PackIcon Margin="0,0,8,0"
-		                                     Foreground="{Binding ElementName=txt_kdkar, Path=BorderBrush}"
+		                                     Foreground="{Binding ElementName=txt_merk, Path=BorderBrush}"
+                                             Width="36" Height="36"
+		                                     Kind="Tag" VerticalAlignment="Center" />
+                    <TextBox x:Name="txt_merk"
+                         materialDesign:HintAssist.Hint="Merk"
+		                 Width="300"
+		                 materialDesign:TransitionAssist.DisableTransitions="True" FontSize="16" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10" VerticalAlignment="Top">
+                    <materialDesign:PackIcon
+                        Margin="4,0"
+                        HorizontalAlignment="Center"
+                        Foreground="{Binding BorderBrush, ElementName=cmb_kategori}"
+                        Kind="Archive" Width="25" Height="25" VerticalAlignment="Stretch" />
+                    <ComboBox
+	                    x:Name="cmb_kategori"
+	                    Width="150"
+	                    Margin="5,0,0,0"
+	                    materialDesign:HintAssist.Hint="Jenis"
+	                    IsEditable="False"
+	                    Style="{StaticResource MaterialDesignFloatingHintComboBox}" VerticalAlignment="Stretch" FontSize="16">
+                            <ComboBoxItem Content="Makanan atau Minuman"/>
+                            <ComboBoxItem Content="Kebutuhan Rumah Tangga"/>
+                            <ComboBoxItem Content="Kosmetik"/>
+                            <ComboBoxItem Content="Mainan"/>
+                            <ComboBoxItem Content="Alat Tulis Kantor"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel  Orientation="Horizontal" Margin="0,0,0,10">
+                    <materialDesign:PackIcon Margin="0,0,8,0"
+		                                     Foreground="{Binding ElementName=txt_hargabarang, Path=BorderBrush}"
                                              Width="36" Height="36"
 		                                     Kind="Cash" VerticalAlignment="Center" />
                     <TextBox x:Name="txt_hargabarang"
@@ -52,9 +86,10 @@
 		                 Width="300"
 		                 materialDesign:TransitionAssist.DisableTransitions="True" FontSize="16" />
                 </StackPanel>
+                
                 <StackPanel  Orientation="Horizontal" Margin="0,0,0,10">
                     <materialDesign:PackIcon Margin="0,0,8,0"
-		                                     Foreground="{Binding ElementName=txt_kdkar, Path=BorderBrush}"
+		                                     Foreground="{Binding ElementName=txt_stok, Path=BorderBrush}"
                                              Width="36" Height="36"
 		                                     Kind="TruckTrailer" VerticalAlignment="Center" />
                     <TextBox x:Name="txt_stok"
@@ -62,19 +97,39 @@
 		                 Width="300"
 		                 materialDesign:TransitionAssist.DisableTransitions="True" FontSize="16" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,100,10,10">
-                    <Button Width="100"
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,50,10,10">
+                    <Button x:Name="btn_batal" Width="100"
 	                    Style="{StaticResource MaterialDesignFlatButton}"
-	                    ToolTip="Resource name: MaterialDesignRaisedButton">
+	                    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btn_batal_Click">
                         Batal
                     </Button>
-                    <Button Width="100"
+                    <Button x:Name="btn_simpan" Width="100"
 	                    Style="{StaticResource MaterialDesignRaisedButton}"
-	                    ToolTip="Resource name: MaterialDesignRaisedButton">
+	                    ToolTip="Resource name: MaterialDesignRaisedButton" Click="btn_simpan_Click">
                         Simpan
                     </Button>
                 </StackPanel>
             </StackPanel>
+        </StackPanel>
+
+        <!--panel kanan-->
+        <StackPanel Grid.Column="1" Margin="0,20,0,0">
+            <DataGrid x:Name="dg_barang"
+                    materialDesign:DataGridAssist.CellPadding="13 8 8 8"
+	                materialDesign:DataGridAssist.ColumnHeaderPadding="10 8 20 8"
+	                AutoGenerateColumns="False"
+	                CanUserAddRows="False"
+	                CanUserSortColumns="True" CanUserResizeRows="False" IsReadOnly="True" Margin="0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding id_karyawan}" Header="Kode Barang" Width="200"/>
+                    <DataGridTextColumn Binding="{Binding id_karyawan}" Header="Nama Barang" Width="200"/>
+                    <DataGridTextColumn Binding="{Binding nama}" Header="Merk" Width="150"/>
+                    <DataGridTextColumn Binding="{Binding jenis_kelamin}" Header="Jenis" Width="200"/>
+                    <DataGridTextColumn Binding="{Binding jenis_kelamin}" Header="Stok" Width="200"/>
+                </DataGrid.Columns>
+
+            </DataGrid>
         </StackPanel>
     </Grid>
 </UserControl>
